@@ -49,11 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name}
 
-%post
-%post_install_gconf_schemas %{name}
-
-%preun
-%preun_uninstall_gconf_schemas %{name}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
