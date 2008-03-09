@@ -1,3 +1,4 @@
+######		Unknown group!
 Summary:	Funky application dock for X11
 Name:		kiba-dock
 Version:	0.0.722
@@ -13,24 +14,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Funky dock for X11
 
 %package devel
+######		Unknown group!
 Summary:	Development files for kiba-dock
 Group:		Development/X11
 Requires:	%{name} = %{version}
 
 %description devel
 Headers for kiba-dock.
-
-%files -f %{name}.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/*.desktop
-%{_datadir}/kiba-dock
-/usr/share/pixmaps/kiba-dock.png
-
-%files devel
-%defattr(644,root,root,755)
-%{_includedir}/kiba-dock/
-/usr/lib/pkgconfig/kiba-dock.pc
 
 %prep
 %setup -q -n %{name}
@@ -51,3 +41,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*
+%{_desktopdir}/*.desktop
+%dir %{_libdir}/kiba-dock
+%{_datadir}/kiba-dock
+%{_pixmapsdir}/kiba-dock.png
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/kiba-dock/
+%{_pkgconfigdir}/kiba-dock.pc
