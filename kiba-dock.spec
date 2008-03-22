@@ -1,12 +1,12 @@
 ######		Unknown group!
 Summary:	Funky application dock for X11
 Name:		kiba-dock
-Version:	0.0.722
+Version:	0.0.731
 Release:	1
 Group:		System/X11
 URL:		http://kiba-dock.org/
-Source0:	%{name}-r722.tar.bz2
-# Source0-md5: c1c59e9dfe2c9aa631f01eb97f742d50
+Source0:	%{name}-r731.tar.bz2
+# Source0-md5:	7083cd4f998960bd3f22e2778e3029d8
 License:	GPL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,6 +36,8 @@ sh autogen.sh -V
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_libdir}/%{name}
 
 %find_lang %{name}
 
